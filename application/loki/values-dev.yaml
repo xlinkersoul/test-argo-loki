@@ -52,7 +52,7 @@ write:
   persistence:
     enabled: true
     storageClass: longhorn-single-replica-strict-local
-    size: 20Gi
+    size: 10Gi
 backend:
   replicas: 3
   resources:
@@ -65,7 +65,7 @@ backend:
   persistence:
     enabled: true
     storageClass: longhorn-single-replica-strict-local
-    size: 50Gi
+    size: 20Gi
 
 # Enable minio for storage
 minio:
@@ -79,7 +79,7 @@ minio:
   persistence:
     enabled: true
     storageClass: longhorn-single-replica-strict-local
-    size: 100Gi
+    size: 30Gi
   rootUser: "admin"
   rootPassword: "Egg@Digital@2025"
   ingress:

@@ -1,0 +1,24 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: set-annotations-simple
+upstream:
+  type: git
+  git:
+    repo: https://github.com/GoogleContainerTools/kpt-functions-catalog
+    directory: /examples/set-annotations-simple
+    ref: set-annotations/v0.1.4
+  updateStrategy: resource-merge
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/GoogleContainerTools/kpt-functions-catalog
+    directory: /examples/set-annotations-simple
+    ref: set-annotations/v0.1.4
+    commit: 2d6d9e482c187cccf1966a5b03321435c75fb963
+pipeline:
+  mutators:
+    - image: gcr.io/kpt-fn/set-annotations:v0.1
+      configMap:
+        color: orange
+        fruit: apple
